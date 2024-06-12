@@ -93,11 +93,38 @@ const App = () => {
         </div>
       </nav>
       <div className="main_container" ref={pageRef}>
-        <div className="page page1"> {/* 1st Page Content */} </div>
-        <div className="page page2"> {/* 2nd Page Content */} </div>
-        <div className="page page3"> {/* 3rd Page Content */} </div>
-        <div className="page page4"> {/* 4th Page Content */} </div>
-        <div className="page page5"> {/* 5th Page Content */} </div>
+        <div className="page page1">
+          <div className="translucent-part">
+            <div className="text-container">
+              <h1>Welcome to Our Music Platform</h1>
+              <p>Experience the best music here.</p>
+            </div>
+          </div>
+        </div>
+        <div className="page page2">
+          <div className="content">
+            <h2>About Us</h2>
+            <p>Information about the company...</p>
+          </div>
+        </div>
+        <div className="page page3">
+          <div className="content">
+            <h2>Our Services</h2>
+            <p>Details about services...</p>
+          </div>
+        </div>
+        <div className="page page4">
+          <div className="content">
+            <h2>Music Player</h2>
+            <p>Enjoy our music player...</p>
+          </div>
+        </div>
+        <div className="page page5">
+          <div className="content">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us...</p>
+          </div>
+        </div>
       </div>
       <ul className="pagination" ref={paginationRef}></ul>
     </div>
