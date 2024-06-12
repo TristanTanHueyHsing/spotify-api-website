@@ -29,31 +29,54 @@ body, html {
 .page {
   height: 100vh;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .page1 {
-  background: url('./assets/music_website.jpg') no-repeat center center;
+  background: url('./assets/music_room.jpg') no-repeat center center;
   background-size: cover;
+  position: relative;
 }
 
-.page2 {
-  background-color: blue;
+.page1 .translucent-part {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; 
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.350); /* Adjust opacity as needed */
+  box-sizing: border-box;
+  padding: 20px;
 }
 
-.page3 {
-  background-color: green;
+.page1 .text-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff; /* Adjust text color */
 }
 
-.page4 {
-  background-color: yellow;
+.page2, .page4 {
+  background-color: #ffc18c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.page5 {
-  background-color: purple;
+.page3, .page5 {
+  background-color: #84240c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pagination {
-  position: fixed; /* Fix to the viewport */
+  position: fixed;
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
@@ -74,4 +97,10 @@ body, html {
 
 .pagination > li.active {
   background: #ffffff;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+  color: #fff;
 }
