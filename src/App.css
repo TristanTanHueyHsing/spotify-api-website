@@ -96,7 +96,7 @@ body, html {
 }
 
 .pagination > li.active {
-  background: #ffffff;
+  background: #f8f8ff;
 }
 
 .content {
@@ -117,3 +117,48 @@ body, html {
   color: black;
   margin: 0;
 }
+
+.centered {
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.page4 {
+  height: 100vh; /* Full viewport height */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.grid-container {
+  display: contents;
+}
+
+.grid-item {
+  height: 100%; /* Ensure each grid item fills its cell completely */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+/* Specific background colors for top-right and bottom-left quadrants */
+.top-right {
+  background-color: #e1c5c0; /* Adjust to the desired color */
+  background:  url('./assets/music_table.jpeg');
+  background-size: 100% 100%; /* Ensure the background image covers the entire area */
+  background-position: center; /* Center the background image */
+}
+
+.bottom-left {
+  background-color: #e1c5c0; /* Adjust to the desired color */
+}
+
+.grid-topleft-style {
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  color: #ffffff;
+}
+

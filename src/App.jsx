@@ -78,7 +78,11 @@ const Home = () => {
         <div className="page page2">
           <div className="content">
             <h2>About Us</h2>
-            <p>Information about the company...</p>
+            <p className="centered">Welcome to our music entertainment website! We are passionate about bringing the joy of music to people around the world. Our platform is dedicated to providing a seamless and immersive music experience for all music lovers. From discovering new artists to enjoying your favorite playlists, we strive to create an environment where music enthusiasts can connect, explore, and indulge in their love for music.
+
+              Our team is composed of music enthusiasts who are dedicated to curating a diverse range of music content. We believe in the power of music to inspire, uplift, and unite people from all walks of life. Whether you're a casual listener or a die-hard music aficionado, our platform has something for everyone.
+
+              At our core, we value creativity, innovation, and inclusivity. We constantly strive to improve and enhance the user experience, ensuring that our platform remains a premier destination for music discovery and enjoyment. Join us on this musical journey and let's explore the endless possibilities of sound together!</p>
           </div>
         </div>
         <div className="page page3">
@@ -88,15 +92,24 @@ const Home = () => {
           </div>
         </div>
         <div className="page page4">
-          <div className="content">
-            <h2>Music Player</h2>
-            <p>Enjoy our music player...</p>
+          <div className="grid-container">
+            <div className="grid-item top-left grid-topleft-style">Music Player<br></br>Welcome to the next level of music streaming! Our music player offers an immersive and intuitive experience, designed to meet the needs of every music lover. Inspired by the best features of Spotify, our platform brings you a seamless and enriched musical journey.</div>
+            <div className="grid-item top-right"></div>
+            <div className="grid-item bottom-left"></div>
+            <div className="grid-item bottom-right">This one ur part</div>
           </div>
         </div>
+
         <div className="page page5">
           <div className="content">
             <h2>Contact Us</h2>
-            <p>Get in touch with us...</p>
+            <p className='centered'>Have a question or feedback for us? We'd love to hear from you! Feel free to reach out to our team using the contact information below: <br></br>
+
+              Email: musicentertainment@clearlyfake.com<br></br>
+
+              Phone: 1-400-MUSIC-ENT<br></br>
+
+              Address: 123 Music Street, Cityville, State, Country</p>
           </div>
         </div>
       </div>
@@ -132,7 +145,7 @@ const App = () => {
             </div>
           </div>
         </nav>
-        
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/musicplayer" element={<MusicPlayer />} />
