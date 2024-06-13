@@ -1,12 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Soundwave from './assets/Soundwave.png';
+import MusicPlayer from './MusicPlayer';
+import Feature2 from './Feature2'; // Import the Feature2 component
 import './App.css';
 
-const App = () => {
-  const pageRef = useRef(null);
-  const paginationRef = useRef(null);
+const Home = () => {
+  const pageRef = React.useRef(null);
+  const paginationRef = React.useRef(null);
 
-  let count = 5; // Updated to 5 pages
+  let count = 5;
   let current = 0;
 
   const updatePagination = (index) => {
@@ -38,7 +41,7 @@ const App = () => {
 
   const btnClick = (e) => gotoNum(parseInt(e.target.dataset.slide));
 
-  useEffect(() => {
+  React.useEffect(() => {
     let pages = pageRef.current.children;
     let pagination = paginationRef.current;
     const init = () => {
@@ -62,36 +65,7 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-        <div className="container-fluid">
-          <div className="navbar-brand mx-auto">
-            <img src={Soundwave} alt='Soundwave' className='logo' />
-          </div>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">About Us</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Music Player</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <>
       <div className="main_container" ref={pageRef}>
         <div className="page page1">
           <div className="translucent-part">
@@ -127,7 +101,45 @@ const App = () => {
         </div>
       </div>
       <ul className="pagination" ref={paginationRef}></ul>
-    </div>
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <div>
+        <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+          <div className="container-fluid">
+            <div className="navbar-brand mx-auto">
+              <img src={Soundwave} alt='Soundwave' className='logo' />
+            </div>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/">Home</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/musicplayer">Music Player</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/feature2">Feature 2</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/musicplayer" element={<MusicPlayer />} />
+          <Route path="/feature2" element={<Feature2 />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
