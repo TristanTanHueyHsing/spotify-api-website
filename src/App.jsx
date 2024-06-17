@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Soundwave from './assets/Soundwave.png';
 import MusicPlayer from './MusicPlayer';
-import Feature2 from './Feature2'; // Import the Feature2 component
+import MusicRecommend from './MusicRecommend'; // Import the Feature2 component
 import './App.css';
 
 const Home = () => {
@@ -42,27 +42,19 @@ const Home = () => {
   const btnClick = (e) => gotoNum(parseInt(e.target.dataset.slide));
 
   React.useEffect(() => {
-    let pages = pageRef.current.children;
-    let pagination = paginationRef.current;
-    const init = () => {
-      if (pages) {
-        count = pages.length;
-        if (count) {
-          for (let i = 0; i < count; i++) {
-            let btn = document.createElement('li');
-            btn.dataset.slide = String(i);
-            btn.addEventListener('click', btnClick);
-            if (i === 0) {
-              btn.classList.add('active');
-            }
-            pagination.appendChild(btn);
-          }
+    if (paginationRef.current.children.length === 0) {
+      for (let i = 0; i < count; i++) {
+        let btn = document.createElement('li');
+        btn.dataset.slide = String(i);
+        btn.addEventListener('click', btnClick);
+        if (i === 0) {
+          btn.classList.add('active');
         }
+        paginationRef.current.appendChild(btn);
       }
-    };
+    }
     pageRef.current.addEventListener('scroll', handleScroll);
-    init();
-  }, []);
+  }, []); // Empty dependency array to run once
 
   return (
     <>
@@ -77,8 +69,8 @@ const Home = () => {
         </div>
         <div className="page page2">
           <div className="content">
-            <h2>About Us</h2>
-            <p className="centered">Welcome to our music entertainment website! We are passionate about bringing the joy of music to people around the world. Our platform is dedicated to providing a seamless and immersive music experience for all music lovers. From discovering new artists to enjoying your favorite playlists, we strive to create an environment where music enthusiasts can connect, explore, and indulge in their love for music.
+            <h2>About Us</h2><br></br>
+            <p className="center">Welcome to our music entertainment website! We are passionate about bringing the joy of music to people around the world. Our platform is dedicated to providing a seamless and immersive music experience for all music lovers. From discovering new artists to enjoying your favorite playlists, we strive to create an environment where music enthusiasts can connect, explore, and indulge in their love for music.
 
               Our team is composed of music enthusiasts who are dedicated to curating a diverse range of music content. We believe in the power of music to inspire, uplift, and unite people from all walks of life. Whether you're a casual listener or a die-hard music aficionado, our platform has something for everyone.
 
@@ -87,23 +79,35 @@ const Home = () => {
         </div>
         <div className="page page3">
           <div className="content">
-            <h2>Our Services</h2>
-            <p>Details about services...</p>
+            <h2>Our Services</h2><br></br>
+            <p className='centred'>At SoundWave, our primary service revolves around enabling you to effortlessly search and play music. With our intuitive platform, you can explore a vast library of songs and instantly stream your favorites with just a few clicks. Whether you're looking for the latest hits or timeless classics, our robust search functionality ensures you can easily discover and enjoy the music you love. Experience seamless playback and uninterrupted listening, making SoundWave your go-to destination for all your music needs.
+              We also have music recommendation which allows you the user to be able to search your favourite music. Dive deeper into the music you love and discover new favorites with our personalized recommendations!  Tell us your tastes or browse curated playlists, and our system will use its smarts to suggest songs and artists you'll love. 
+            </p>
           </div>
         </div>
         <div className="page page4">
           <div className="grid-container">
-            <div className="grid-item top-left grid-topleft-style">Music Player<br></br>Welcome to the next level of music streaming! Our music player offers an immersive and intuitive experience, designed to meet the needs of every music lover. Inspired by the best features of Spotify, our platform brings you a seamless and enriched musical journey.</div>
+            <div className="grid-item top-left grid-text-style">
+              <div className="music-player-title">Music Player</div><br></br>
+              <span>
+                Dive into a world of high-quality sound and personalized music journeys. Whether you're enjoying your favorite hits or discovering new tracks, our platform provides a seamless and immersive listening experience. Explore an extensive library of songs and albums. Our music player is designed to enhance your listening pleasure. Let the melodies flow and make every moment unforgettable as you lose yourself in the music.
+              </span>
+            </div>
             <div className="grid-item top-right"></div>
             <div className="grid-item bottom-left"></div>
-            <div className="grid-item bottom-right">This one ur part</div>
+            <div className="grid-item bottom-right grid-text-style">
+              <div className="music-recommend-title">Music Recommendation</div><br></br>
+              <span>
+                Our innovative platform leverages advanced algorithms and the power of a robust music API to curate playlists tailored specifically to your unique tastes. Whether you're in the mood for upbeat tunes to kickstart your day or soothing melodies to unwind in the evening, we've got you covered. Simply explore our website, and let us introduce you to new artists and tracks that perfectly match your musical preferences. Dive into a world of music discovery and make every moment resonate with the perfect soundtrack!
+              </span>
+            </div>
           </div>
         </div>
 
         <div className="page page5">
           <div className="content">
-            <h2>Contact Us</h2>
-            <p className='centered'>Have a question or feedback for us? We'd love to hear from you! Feel free to reach out to our team using the contact information below: <br></br>
+            <h2>Contact Us</h2><br></br>
+            <p className='centered'>Have a question or feedback for us? We'd love to hear from you!<br></br> Feel free to reach out to our team using the contact information below: <br></br>
 
               Email: musicentertainment@clearlyfake.com<br></br>
 
@@ -149,7 +153,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/musicplayer" element={<MusicPlayer />} />
-          <Route path="/feature2" element={<Feature2 />} />
+          <Route path="/feature2" element={<MusicRecommend />} />
         </Routes>
       </div>
     </Router>

@@ -1,3 +1,4 @@
+/* Global Styles */
 body, html {
   margin: 0;
   padding: 0;
@@ -118,10 +119,22 @@ body, html {
   margin: 0;
 }
 
+.center {
+  text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
 .centered {
   text-align: center;
   margin-left: 100px;
   margin-right: 100px;
+}
+
+.centred {
+  text-align: center;
+  margin-left: 250px;
+  margin-right: 250px;
 }
 
 .page4 {
@@ -138,9 +151,13 @@ body, html {
 .grid-item {
   height: 100%; /* Ensure each grid item fills its cell completely */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
+  text-align: center;
+  padding: 0 100px;
+  color: #ffffff;
+  padding: 20px;
 }
 
 /* Specific background colors for top-right and bottom-left quadrants */
@@ -156,9 +173,31 @@ body, html {
 }
 
 .grid-topleft-style {
+  width: 100%;
+  color: #ffffff;
+  padding: 0 100px;
+}
+
+.topleft-title {
   text-align: center;
   margin-left: 100px;
   margin-right: 100px;
   color: #ffffff;
 }
 
+.music-player-title {
+  font-weight: bold;
+  font-size: 2em; /* Adjust the font size to match the surrounding text */
+}
+
+.music-recommend-title {
+  font-weight: bold;
+  font-size: 2em; /* Adjust the font size to match the surrounding text */
+}
+
+/* New Class for Music Recommendation */
+.grid-bottomright-style {
+  width: 100%;
+  color: #ffffff;
+  padding: 0 100px;
+}
