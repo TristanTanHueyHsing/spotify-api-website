@@ -2,10 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Soundwave from './assets/Soundwave.png';
 import MusicPlayer from './MusicPlayer';
+import SpotifyLogin from './SpotifyLogin';
 import MusicRecommend from './MusicRecommend'; // Import the Feature2 component
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { useContext } from 'react';
 
-const Home = () => {
+export const Home = () => {
   const pageRef = React.useRef(null);
   const paginationRef = React.useRef(null);
 
@@ -81,7 +84,7 @@ const Home = () => {
           <div className="content">
             <h2>Our Services</h2><br></br>
             <p className='centred'>At SoundWave, our primary service revolves around enabling you to effortlessly search and play music. With our intuitive platform, you can explore a vast library of songs and instantly stream your favorites with just a few clicks. Whether you're looking for the latest hits or timeless classics, our robust search functionality ensures you can easily discover and enjoy the music you love. Experience seamless playback and uninterrupted listening, making SoundWave your go-to destination for all your music needs.
-              We also have music recommendation which allows you the user to be able to search your favourite music. Dive deeper into the music you love and discover new favorites with our personalized recommendations!  Tell us your tastes or browse curated playlists, and our system will use its smarts to suggest songs and artists you'll love. 
+              We also have music recommendation which allows you the user to be able to search your favourite music. Dive deeper into the music you love and discover new favorites with our personalized recommendations!  Tell us your tastes or browse curated playlists, and our system will use its smarts to suggest songs and artists you'll love.
             </p>
           </div>
         </div>
@@ -90,7 +93,7 @@ const Home = () => {
             <div className="grid-item top-left grid-text-style">
               <div className="music-player-title">Music Player</div><br></br>
               <span>
-                Dive into a world of high-quality sound and personalized music journeys. Whether you're enjoying your favorite hits or discovering new tracks, our platform provides a seamless and immersive listening experience. Explore an extensive library of songs and albums. Our music player is designed to enhance your listening pleasure. Let the melodies flow and make every moment unforgettable as you lose yourself in the music.
+                Dive into a world of high-quality sound and personalized music journeys.<br></br> Whether you're enjoying your favorite hits or discovering new tracks,<br></br> our platform provides a seamless and immersive listening experience.<br></br> Explore an extensive library of songs and albums. Our music player <br></br>is designed to enhance your listening pleasure. Let the melodies flow <br></br>and make every moment unforgettable as you lose yourself in the music.
               </span>
             </div>
             <div className="grid-item top-right"></div>
@@ -98,7 +101,7 @@ const Home = () => {
             <div className="grid-item bottom-right grid-text-style">
               <div className="music-recommend-title">Music Recommendation</div><br></br>
               <span>
-                Our innovative platform leverages advanced algorithms and the power of a robust music API to curate playlists tailored specifically to your unique tastes. Whether you're in the mood for upbeat tunes to kickstart your day or soothing melodies to unwind in the evening, we've got you covered. Simply explore our website, and let us introduce you to new artists and tracks that perfectly match your musical preferences. Dive into a world of music discovery and make every moment resonate with the perfect soundtrack!
+                Our innovative platform leverages advanced algorithms and the power of a <br></br>robust music API to curate playlists tailored specifically to your unique tastes.<br></br> Whether you're in the mood for upbeat tunes to kickstart your day or <br></br>soothing melodies to unwind in the evening, we've got you covered. Simply <br></br>explore our website, and let us introduce you to new artists and tracks that <br></br>perfectly match your musical preferences. Dive into a world of music discovery <br></br>and make every moment resonate with the perfect soundtrack!
               </span>
             </div>
           </div>
@@ -140,10 +143,10 @@ const App = () => {
                   <Link className="nav-link" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/musicplayer">Music Player</Link>
+                  <Link className="nav-link" to="/spotifylogin">Music Player</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/feature2">Feature 2</Link>
+                  <Link className="nav-link" to="/musicrecommendation">Music Recommendation</Link>
                 </li>
               </ul>
             </div>
@@ -152,8 +155,9 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/spotifylogin" element={<SpotifyLogin />} />
           <Route path="/musicplayer" element={<MusicPlayer />} />
-          <Route path="/feature2" element={<MusicRecommend />} />
+          <Route path="/musicrecommendation" element={<MusicRecommend />} />
         </Routes>
       </div>
     </Router>

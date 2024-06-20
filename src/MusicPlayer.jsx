@@ -1,12 +1,28 @@
+// MusicPlayer.js
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import './MusicPlayer.css';
+import SpotifyLogin from './SpotifyLogin';
 
-const MusicPlayer = () => {
+function MusicPlayer() {
+  const location = useLocation();
+  const code = new URLSearchParams(location.search).get('code');
+
   return (
-    <div className="page-content">
-      <h2 className='new-h2'>Music Player</h2>
-      <p className="new-line">This is the Music Player page.</p>
+    <div className="music-player-container">
+      {code ? (
+        <div style={{color: 'white'}}>
+          <h1>Authorization Code:</h1>
+          <p>{code}</p>
+        </div>
+      ) : (
+        <>
+          <p>Login to access music player</p>
+          <SpotifyLogin />
+        </>
+      )}
     </div>
   );
-};
+}
 
 export default MusicPlayer;
