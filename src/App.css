@@ -155,9 +155,8 @@ body, html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 100px;
   color: #ffffff;
-  padding: 20px;
+  padding-bottom: 20px;
 }
 
 /* Specific background colors for top-right and bottom-left quadrants */
@@ -201,3 +200,4 @@ body, html {
   color: #ffffff;
   padding: 0 100px;
 }
+

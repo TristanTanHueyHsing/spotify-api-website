@@ -5,7 +5,7 @@ import MusicPlayer from './MusicPlayer';
 import MusicRecommend from './MusicRecommend'; // Import the Feature2 component
 import './App.css';
 
-const Home = () => {
+export const Home = () => {
   const pageRef = React.useRef(null);
   const paginationRef = React.useRef(null);
 
@@ -90,7 +90,7 @@ const Home = () => {
             <div className="grid-item top-left grid-text-style">
               <div className="music-player-title">Music Player</div><br></br>
               <span>
-                Dive into a world of high-quality sound and personalized music journeys. Whether you're enjoying your favorite hits or discovering new tracks, our platform provides a seamless and immersive listening experience. Explore an extensive library of songs and albums. Our music player is designed to enhance your listening pleasure. Let the melodies flow and make every moment unforgettable as you lose yourself in the music.
+                Dive into a world of high-quality sound and personalized music journeys.<br></br> Whether you're enjoying your favorite hits or discovering new tracks,<br></br> our platform provides a seamless and immersive listening experience.<br></br> Explore an extensive library of songs and albums. Our music player <br></br>is designed to enhance your listening pleasure. Let the melodies flow <br></br>and make every moment unforgettable as you lose yourself in the music.
               </span>
             </div>
             <div className="grid-item top-right"></div>
@@ -98,7 +98,7 @@ const Home = () => {
             <div className="grid-item bottom-right grid-text-style">
               <div className="music-recommend-title">Music Recommendation</div><br></br>
               <span>
-                Our innovative platform leverages advanced algorithms and the power of a robust music API to curate playlists tailored specifically to your unique tastes. Whether you're in the mood for upbeat tunes to kickstart your day or soothing melodies to unwind in the evening, we've got you covered. Simply explore our website, and let us introduce you to new artists and tracks that perfectly match your musical preferences. Dive into a world of music discovery and make every moment resonate with the perfect soundtrack!
+                Our innovative platform leverages advanced algorithms and the power of a <br></br>robust music API to curate playlists tailored specifically to your unique tastes.<br></br> Whether you're in the mood for upbeat tunes to kickstart your day or <br></br>soothing melodies to unwind in the evening, we've got you covered. Simply <br></br>explore our website, and let us introduce you to new artists and tracks that <br></br>perfectly match your musical preferences. Dive into a world of music discovery <br></br>and make every moment resonate with the perfect soundtrack!
               </span>
             </div>
           </div>

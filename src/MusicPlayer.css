@@ -1,0 +1,66 @@
+.music-player-container {
+    position: fixed;
+    top: 120px; /* Adjust top position as needed */
+    right: 20px; /* Adjust right position as needed */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .login-icon {
+    width: 40px; /* Adjust icon size as needed */
+    height: 40px;
+    object-fit: contain; /* Ensure icon scales within specified dimensions */
+    cursor: pointer;
+  }
+  
+  /* Adjustments for the dropdown menu */
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px); /* Position below the toggle */
+    right: 0; /* Position at the right of the toggle */
+    width: 200px; /* Adjust dropdown width as needed */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    max-width: calc(100vw - 40px); /* Limit dropdown width to viewport width minus padding */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Show ellipsis for text that exceeds max-width */
+  }
+  
+  .dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-menu ul li {
+    margin-bottom: 8px;
+  }
+  
+  .dropdown-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 5px 10px;
+  }
+  
+  .dropdown-menu ul li a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dropdown-toggle::after {
+    display: none !important; /* Hide the default dropdown arrow */
+  }
+  
+  .dropdown-menu[data-bs-popper] {
+    top: 100% !important;
+    left: unset !important; /* Unset the left positioning */
+    margin-top: var(--bs-dropdown-spacer) !important;
+  }
+  
+  .dropdown-item.disabled, .dropdown-item:disabled {
+    color: unset !important;
+    pointer-events: none;
+    background-color: unset !important;
+}
