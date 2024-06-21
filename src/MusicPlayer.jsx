@@ -1,12 +1,14 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import SpotifyLogin from './SpotifyLogin';
 
-const MusicPlayer = () => {
+function MusicPlayer() {
   return (
-    <div className="page-content">
-      <h2 className='new-h2'>Music Player</h2>
-      <p className="new-line">This is the Music Player page.</p>
-    </div>
+    <>
+      <SpotifyLogin />
+      <div>hi</div>
+    </>
   );
-};
+}
 
 export default MusicPlayer;
